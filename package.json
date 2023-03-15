@@ -1,0 +1,24 @@
+{
+  "name": "yarn-plugin-workspace-postinstall",
+  "main": "./sources/index.ts",
+  "dependencies": {
+    "@yarnpkg/core": "^2.4.0",
+    "@yarnpkg/shell": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@yarnpkg/builder": "^2.1.3",
+    "husky": "^4.3.0",
+    "typescript": "4.6.3"
+  },
+  "scripts": {
+    "build": "builder build plugin"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build",
+      "post-merge": "yarn"
+    }
+  },
+  "packageManager": "yarn@3.4.1"
+}
